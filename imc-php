@@ -1,0 +1,42 @@
+<?php
+
+require_once __DIR__ . '/functions-helper.php';
+
+// ver valores que vêm do html
+echo '<h1>POST</h1>';
+debug($_POST);
+
+// calculo IMC
+$altura = $_POST['altura'];
+$peso   = $_POST['peso'];
+
+$imc 	= $peso / ($altura * $altura);
+$imc 	= $imc*1000;
+$imc    = number_format($imc, 3);
+
+echo "Valor do IMC: $imc <br>";
+
+if ($imc <= 1.85){
+	echo "Voce está abaixo do peso! <br>";
+	echo "Coma frutas e beba agua! <br> "; 
+}elseif ($imc >1.85 && $imc <= 2.49){
+	echo "Voce está em seu peso normal! <br>";
+	echo "Coma frutas e beba agua! <br> ";
+}elseif ($imc >= 2.50 && $imc <= 2.99){
+	echo "Voce está com sobrepeso! <br>";
+	echo "Coma frutas e beba agua! <br> ";
+	echo "Faça exercicios saia dessa cadeira seu gordo! <br>";
+}elseif ($imc >= 3.00 && $imc <= 3.49){
+	echo "Voce está com Obesidade grau 1!!!!!  <br>";
+	echo "Coma frutas e beba agua! <br> ";
+	echo "Caramba cara vamo começar a se cuidar!!!! <br> ";
+}elseif ($imc >= 3.50 && $imc <= 39.9){
+	echo "Voce está com obrsidade grau 2!!!!!!  <br>";
+	echo "Coma frutas e beba agua! <br> ";
+	echo "voce é tao gordo que pra dar a volta em voce precisa pegar um trem! <br>";
+}elseif ($imc >40){
+	echo "voce está com obesidade grau 3!!!!  <br>";
+	echo "Coma frutas e beba agua! <br> ";
+	echo "voce ja consegue descer uma ladeira rolando";
+}
+
