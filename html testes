@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>exemplo Post e get</title>
+	<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+    <!-- titulos HTML -->
+	<h1>IMC</h1>
+	
+
+	<!--FORMULARIO -->
+	<form action = "/exemplo.php" method ="POST">
+		nome: <input type="text" name="nome"> <br>
+		altura: <input type="number" name="altura"> <br>
+		peso: <input type="number" name="peso"> <br>
+		<input type="submit" value="enviar"> <br>
+	</form>
+
+</body>
+</html>
